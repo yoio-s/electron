@@ -1,0 +1,103 @@
+{
+  "name": "yoio-job",
+  "version": "1.0.1",
+  "description": "",
+  "main": "public/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "publish": "electron-builder --mac --win -p always"
+  },
+  "build": {
+    "productName": "dododo",
+    "appId": "sssss-1",
+    "directories": {
+      "output": "build"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "yoio",
+        "repo": "electron-updater"
+      }
+    ],
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "public/*"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "dist/images/icons/dodo.ico",
+      "uninstallerIcon": "dist/images/icons/dodo.ico",
+      "installerHeaderIcon": "dist/images/icons/dodo.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "sss",
+      "include": "dist/installer.nsh"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "dist/images/icons/dodo.icns"
+    },
+    "win": {
+      "icon": "dist/images/icons/dodo.ico"
+    },
+    "linux": {
+      "icon": "dist/images/icons"
+    }
+  },
+  "author": "yoio",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "electron": "^12.0.1",
+    "electron-connect": "^0.6.3",
+    "electron-rebuild": "^2.3.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-smushit": "^1.2.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "gulp-watch-path": "^0.1.0",
+    "stream-combiner2": "^1.1.1"
+  },
+  "dependencies": {
+    "electron-create-menu": "^3.0.1",
+    "electron-log": "^4.3.2",
+    "electron-updater": "^4.3.8",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-html-minify": "0.0.14",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "update-electron-app": "^2.0.1"
+  }
+}

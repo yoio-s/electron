@@ -1,0 +1,106 @@
+ul,ul>li {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+.titleBar{
+    height:28px;
+    line-height: 30px;
+    background: #eeeeee;
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.title{flex:1;
+    display: flex;
+    -webkit-app-region:drag;
+    padding-left: 6px;
+    box-sizing: border-box;
+    color:#333333;
+    font-weight: bold;
+    font-size: 12px;
+}
+.logo{padding-left:8px;
+    padding-right:6px;
+}
+.logo img{
+    width:20px;
+    height:20px;
+    margin-top:7px;
+}
+.txt{text-align: center;
+    /*flex:1;*/
+    width: 60px;
+    border-radius: 5px;
+    position: relative;
+    cursor:pointer;
+    -webkit-app-region: no-drag;
+}
+.txt:hover>.menuBox {
+    display: block;
+}
+
+.txt .menuBox {
+    display: none;
+    position: absolute;
+    top: 29px;
+    left: 0;
+    background: #eeeeee;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.txt:hover {
+    background: #cccccc;
+}
+.txt .menuBox>ul>li {
+    padding: 5px 25px;
+    border-radius: 5px;
+    line-height: 1.5;
+
+}
+.txt .menuBox>ul>li:hover {
+    background: #cccccc;
+}
+.close:hover{color: #fff;
+    background-color:#cccccc;
+}
+
+.windowTool {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.windowTool div{
+    color:#333333;
+    font-weight: bold;
+    height:100%;
+    width:38px;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-app-region: no-drag;
+}
+i{font-size:12px;}
+.windowTool div:hover{
+    cursor:pointer;
+    background: #eeeeee;
+}
+
+body{margin:0;
+    padding:0;
+    overflow: hidden;
+    height:100%;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+}
