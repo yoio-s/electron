@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
             '</div>'
 
             
-            const loginBox =  document.querySelector('.project-to-use')
+            let loginBox =  document.querySelector('.project-to-use')
             loginBox.innerHTML += '<a class="ui small inverted button" href="javascript:;">发起流程</a>'
             const loginButton =  document.querySelector('.project-to-use>a')
             

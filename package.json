@@ -1,6 +1,6 @@
 {
   "name": "yoio-job",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
   "main": "public/main.js",
   "scripts": {
@@ -21,7 +21,8 @@
       {
         "provider": "github",
         "owner": "yoio",
-        "repo": "electron-updater"
+        "repo": "electron-updater",
+        "url": "https://github.com/yoio-s/electron/releases/latest"
       }
     ],
     "files": [
@@ -98,6 +99,7 @@
     "gulp-html-minify": "0.0.14",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
     "update-electron-app": "^2.0.1"
   }
 }

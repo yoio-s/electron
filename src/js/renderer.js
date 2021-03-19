@@ -23,33 +23,39 @@
             // }
         })
     }
-
-    const min = document.getElementById('min');
-    if (min) {
-        min.addEventListener('click', () => {
-            //发送最小化命令
-            ipcRenderer.send('window-min');
-        })
-    }
-
-    const close = document.getElementById('close');
-    if (close) {
-        close.addEventListener('click', () => {
-            //发送关闭命令
-            ipcRenderer.send('window-close');
-        })
-    }
-
-    ipcRenderer.on('main-window-max', (event) => {
-        max.classList.remove('icon-max');
-        max.classList.add('icon-maxed');
-        max.innerHTML = '还原'
-    });
-    ipcRenderer.on('main-window-unmax', (event) => {
-        max.classList.remove('icon-maxed');
-        max.classList.add('icon-max');
-        max.innerHTML = '最大'
+    const messageBox = document.querySelector('#imessagebox')
+    ipcRenderer.on('message',function (event,text){
+        // console.log(text)
+        messageBox.innerHTML+= text
+        // alert(text)
     })
+    //
+    // const min = document.getElementById('min');
+    // if (min) {
+    //     min.addEventListener('click', () => {
+    //         //发送最小化命令
+    //         ipcRenderer.send('window-min');
+    //     })
+    // }
+    //
+    // const close = document.getElementById('close');
+    // if (close) {
+    //     close.addEventListener('click', () => {
+    //         //发送关闭命令
+    //         ipcRenderer.send('window-close');
+    //     })
+    // }
+    //
+    // ipcRenderer.on('main-window-max', (event) => {
+    //     max.classList.remove('icon-max');
+    //     max.classList.add('icon-maxed');
+    //     max.innerHTML = '还原'
+    // });
+    // ipcRenderer.on('main-window-unmax', (event) => {
+    //     max.classList.remove('icon-maxed');
+    //     max.classList.add('icon-max');
+    //     max.innerHTML = '最大'
+    // })
 
 
 })();
